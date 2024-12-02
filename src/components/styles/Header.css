@@ -1,0 +1,90 @@
+/* styles/Header.css */
+
+nav {
+    background-color: #438ACA; /* Background color for the nav */
+    color: white; /* Text color */
+    padding: 15px 30px; /* Increased padding for a more spacious look */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center; /* Center items vertically */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.logo-container {
+    display: flex; /* Flexbox for logo alignment */
+    align-items: left; /* Center logo vertically */
+}
+
+.logo {
+    height: 70px; /* Fixed height for logo */
+    width: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.nav-links {
+    list-style-type: none; /* Remove bullet points */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Use flexbox for links */
+    gap: 30px; /* Space between links */
+}
+
+.nav-links li {
+    position: relative; /* For hover effects */
+}
+
+nav a {
+    cursor: pointer; /* Pointer cursor on hover */
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: 500; /* Slightly bolder text */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+    margin: 0 10px; /* Add some margin for spacing */
+}
+
+nav a:hover {
+    color: #75C049; /* Change color on hover */
+}
+
+/* Hamburger Icon Styles */
+.hamburger {
+    display: none; /* Hide by default */
+    flex-direction: column; /* Stack lines vertically */
+    cursor: pointer; /* Pointer cursor on hover */
+    background-color: #75C049; /* Set background color to green */
+    padding: 5px; /* Add some padding for better touch target */
+    border: none; /* Remove default button border */
+    border-radius: 5px; /* Optional: Add rounded corners */
+}
+
+.hamburger .line {
+    width: 30px; /* Width of the lines */
+    height: 2px; /* Height of the lines */
+    background-color: white; /* Change color of the lines to white */
+    margin: 2px 0; /* Space between lines */
+    transition: 0.3s; /* Smooth transition */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide links by default */
+        flex-direction: column; /* Stack links vertically */
+        width: 95%; /* Set width to 80% */
+        background-color: #438ACA; /* Match background color */
+        position: absolute; /* Position it absolutely */
+        top: 110px; /* Position below the navbar */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Adjust position to center */
+        z-index: 1000; /* Ensure it appears above other content */
+        padding: 10px 0; /* Add some padding */
+    }
+
+    .nav-links.open {
+        display: flex; /* Show links when open */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger icon on small screens */
+    }
+}
